@@ -17,11 +17,11 @@ Special thanks to the Metasploit team for creating another great CTF and congrat
 
 First, I browsed to port 80 and was met with this screen:
 
-![80](images/metasploit-ctf_2020/port80.png)
+![80](/images/metasploit-ctf_2020/port80.png)
 
 Interesting, I kicked off a **gobuster** scan but returned to find no results. The icon in the top left looked suspicious, so I loaded it directly.
 
-![ms logo](images/metasploit-ctf_2020/ms_logo.png)
+![ms logo](/images/metasploit-ctf_2020/ms_logo.png)
 
 Wow, a QR code...
 
@@ -33,25 +33,25 @@ SPOILERS BELOW - The picture linked above is the exact image from the challenge,
 
 I cleaned up the QR code with **gimp** in order to scan it.
 
-![cleaned QR](images/metasploit-ctf_2020/cleaned_qr.png)
+![cleaned QR](/images/metasploit-ctf_2020/cleaned_qr.png)
 
 Now, time to scan. I used [zxing](https://zxing.org/w/decode.jspx):
 
-![zxing](images/metasploit-ctf_2020/qr_decode.png)
+![zxing](/images/metasploit-ctf_2020/qr_decode.png)
 
 Well, that's no flag. However, this output reminded us of a similar message we encountered during the initial enumeration of the box.
 
 During the initial enumeration we ran a full **nmap** scan:
 
-![Nmap](images/metasploit-ctf_2020/nmap_all_ports.png)
+![Nmap](/images/metasploit-ctf_2020/nmap_all_ports.png)
 
 We saw port 1994 open, so we ran some quick tests against it:
 
-![Port 1994](images/metasploit-ctf_2020/1994.png)
+![Port 1994](/images/metasploit-ctf_2020/1994.png)
 
 See, this also mentions a cigar. I did attempt to submit the QR code and full ms_logo to the port with **nc** but no luck. I started analyzing the ms_logo image with a number of Stego tools, but wasn't getting any usable results. However, that band of color in the top left corner kept bothering me. I took a closer look with **gimp**:
 
-![Color Band](images/metasploit-ctf_2020/color-band.png)
+![Color Band](/images/metasploit-ctf_2020/color-band.png)
 
 Then, I wrote a small Python script to print out those unique pixels:
 
@@ -81,11 +81,11 @@ python3 color-column.py | head -n 3
 
 Now, I don't want anyone reading this post to think I instantly recognized this. I had a suspicion that Least Significant Bit (LSB) stego was a possibility, but I stared at these numbers for awhile and even jumped to other challenges. Finally, I came back and took a look with CyberChef:
 
-![LSB Analysis](images/metasploit-ctf_2020/cyberchef_lsb_analysis.png)
+![LSB Analysis](/images/metasploit-ctf_2020/cyberchef_lsb_analysis.png)
 
 I see a pattern here. Let me illustrate it a little better:
 
-![LSB](images/metasploit-ctf_2020/lsb.png)
+![LSB](/images/metasploit-ctf_2020/lsb.png)
 
 The least significant bits, four to be exact, are changing. I wrote a Python script to pull these out:
 
@@ -111,11 +111,11 @@ $ python3 colors.py
 
 I collected the binary and ran it through CyberChef:
 
-![CyberChef Binary Decode](images/metasploit-ctf_2020/cyberchef_binary_decode.png)
+![CyberChef Binary Decode](/images/metasploit-ctf_2020/cyberchef_binary_decode.png)
 
 That looks like what we have been searching for! Moving back to the port I mentioned earlier, I tried submitting the string:
 
-![Phrase Submission](images/metasploit-ctf_2020/1994_submission.png)
+![Phrase Submission](/images/metasploit-ctf_2020/1994_submission.png)
 
 As you can see, it confirms we cracked the code and sends flag data. I redirected this information to a file:
 
@@ -153,7 +153,7 @@ OK: queen_of_diamonds.png (283x378, 32-bit RGB+alpha, non-interlaced, 89.9%).
 
 After making these modifications, we can view the final flag!
 
-![Queen of Diamonds](images/metasploit-ctf_2020/queen_of_diamonds.png)
+![Queen of Diamonds](/images/metasploit-ctf_2020/queen_of_diamonds.png)
 
 {{< highlight bash >}}
 $ queen_of_diamonds.png

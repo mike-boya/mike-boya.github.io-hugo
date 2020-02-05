@@ -15,12 +15,11 @@ write-up of one of my solutions.
 
 **Spotted Quoll** was a web challenge worth 50 points. The details of the challenge are in the image below.
 
-<img src="/images/gctf_2016/problem.png"/>
-
+![Problem](/images/gctf_2016/problem.png)
 
 I loaded up the blog and looked for any clues:
 
-<img src="/images/gctf_2016/blog.png"/>
+![Blog](/images/gctf_2016/blog.png)
 
 <!--more-->
 
@@ -28,7 +27,7 @@ I loaded up the blog and looked for any clues:
 
 I started up *burp* and reloaded the page. I navigated to the <code>/admin</code> section of the blog and received an error:
 
-<img src="/images/gctf_2016/error.png"/>
+![Error](/images/gctf_2016/error.png)
 
 A cookie called "obsoletePickle" was being passed with my requests.
 
@@ -85,6 +84,7 @@ I reloaded the <code>/admin</code> page and submitted my modified cookie.
       Cookie: obsoletePickle=KGRwMApTJ3B5dGhvbicKcDEKUydwaWNrbGVzJwpwMgpzUydzdWJ0bGUnCnAzClMnaGludCcKcDQKc1MndXNlcicKcDUKUydhZG1pbicKcDYKcy4=
       Connection: close
 
-<img src="/images/gctf_2016/solution.png"/>
+
+![Solution](/images/gctf_2016/solution.png)
 
 Success! The flag is "CTF{but_wait,theres_more.if_you_call}"

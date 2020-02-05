@@ -14,7 +14,9 @@ Hello and Happy New Year! This year's Holiday Hack Challenge theme was an online
 <!--more-->
 
 <p align="center"> 
-<img src="/images/sans_2018/kringlecon.png"/>
+
+![KringleCon](/images/sans_2018/kringlecon.png)  
+
 </p>
 
 Before reading my write-up, it is worth noting that previous Holiday Hack Challenges are kept all year now. So before you read this post, go try it out if you have not already. 
@@ -22,26 +24,28 @@ Before reading my write-up, it is worth noting that previous Holiday Hack Challe
 
 One of the best parts of Holiday Hack is the collaboration and friends you make along the way. While in *LineCON* waiting for KringleCon to open, I hung with my buddies [Cakez](https://twitter.com/_zakec) and [Taffy](https://twitter.com/RichRoc17):
 
-<img src="/images/sans_2018/friends.png"/>
+![Friends](/images/sans_2018/friends.png)  
 
 After entering Santa's castle, I noticed a suspicious character with a walkie talkie in the middle of the first room. The name above his head read "Hans," and I immediately recognized the **Die Hard** reference and knew we were in for some major fun! 
 
 <p align="center"> 
-<img src="/images/sans_2018/suspicious-activity.png"/>
+
+![Suspicious Activity](/images/sans_2018/suspicious-activity.png)  
+
 </p>
 
 ## Cranberry Pi Terminals
 
 ### Essential Editor Skills
 
-<img src="/images/sans_2018/vi-exit.png"/>
+![vi Exit](/images/sans_2018/vi-exit.png)  
 
 Vi can be exited a number of ways. I chose to use <code>:q!</code>. After exiting the editor, we were presented with the congratulatory message indicating we solved the first terminal.
 
 
 ### DevOps Fail
 
-<img src="/images/sans_2018/devops-fail.png"/>
+![Devops Fail](/images/sans_2018/devops-fail.png)  
 
 As shown in the screenshot above, there are some credentials stored in this repo. I parsed through the logs with *git log*:
 
@@ -84,7 +88,7 @@ As you can see in the output above, the password that was removed from the git r
 
 ### Python Escape From LA
 
-<img src="/images/sans_2018/python-escape.png"/>
+![Python Escape](/images/sans_2018/python-escape.png) 
 
 Interestingly, we were dropped in a Python shell. Using some of [Mark Baggett's](https://twitter.com/MarkBaggett) tricks helped us escape the restriction:
 
@@ -121,7 +125,7 @@ You escaped! Congratulations!
 
 ### The Name Game
 
-<img src="/images/sans_2018/name-game.png"/>
+![Name Game](/images/sans_2018/name-game.png) 
 
 A quick demo of the menus revealed that option 2 "verify the system" simply runs *ping*. If that is running a system command, can we inject an additional command?
 
@@ -175,11 +179,11 @@ onboard.db: SQLite 3.x database
 
 As shown in the output above, the first name of our guy "Chan!" is Scott...
 
-<img src="/images/sans_2018/hello-scott.png"/>
+![Hello Scott](/images/sans_2018/hello-scott.png) 
 
 ### The Sleighbell
 
-<img src="/images/sans_2018/sleighbell.png"/>
+![SleighBell](/images/sans_2018/sleighbell.png) 
 
 As shown in the screenshot above, the goal of this challenge is to win the sleighbell lottery. I used <code>objdump -d sleighbell-lotto</code> to disassemble the binary and spotted a function called *winnerwinner*. I loaded the binary into *gdb*, set a breakpoint in main, and called the discovered function:
 
@@ -228,7 +232,7 @@ Congratulations! You've won, and have successfully completed this challenge.
 
 ### CURLing Master
 
-<img src="/images/sans_2018/curling-master.png"/>
+![Curling Master](/images/sans_2018/curling-master.png) 
 
 A quick perusal of the users .bash_history file listed a *cURL* command. I re-ran it:
 
@@ -290,7 +294,8 @@ TLS connections are in place when they do so.
 
 ### Yule Log Analysis
 
-<img src="/images/sans_2018/yule-log.png"/>
+![Yule Log](/images/sans_2018/yule-log.png) 
+
 
 For this challenge, we are provided with Windows evtx logs, but the creators were nice enough to give us a linux box and a python script to dump the evtx logs to a text file: 
 
@@ -328,7 +333,7 @@ I knew that only a single account was compromised and password spraying was the 
 
 ### Lethal ForensicELFication
 
-<img src="/images/sans_2018/forensic-elf.png"/>
+![Forensic Elf](/images/sans_2018/forensic-elf.png) 
 
 The first item of note for this challenge is a hidden directory named .secrets. It contained a directory called "her" that contained a poem.txt. However, the poem did not reveal who it was about. There is a *.viminfo* file in the home directory. This file is used to store state information so you can continue where you left off when you exited vim.
 
@@ -346,12 +351,12 @@ $ cat .viminfo
 
 The *.viminfo* file contained the command line history. This history reveals that Morcel Nougat performed a global search and replace in vim to replace all instances of Elinore with NEVERMORE. Submitting Elinore to runtoanswer results in:
 
-<img src="/images/sans_2018/elinore.png"/>
+![Elinore](/images/sans_2018/elinore.png) 
 
 
 ### Stall Mucking Report
 
-<img src="/images/sans_2018/stall-mucking.png"/>
+![Stall Mucking](/images/sans_2018/stall-mucking.png) 
 
 The screen resolution for this made it a bit difficult. I sent the results of *ps a* to a file and viewed the contents:
 
@@ -413,7 +418,7 @@ Building separate accounts for each elf in the lot.
 
 **What phrase is revealed when you answer all of the questions at the KringleCon Holiday Hack History kiosk inside the castle?**
 
-<img src="/images/sans_2018/kringlecon-kiosk.png"/>
+![KringleCon Kiosk](/images/sans_2018/kringlecon-kiosk.png) 
 
 The image above shows me standing next to the kiosk. It poses six questions about past Holiday Hack challenges. The answers were:
 
@@ -444,8 +449,7 @@ The image above shows me standing next to the kiosk. It poses six questions abou
 
 After answering all these, the secret phrase was revealed:
 
-<img src="/images/sans_2018/happy-trails.png"/>
-
+![Happy Trails](/images/sans_2018/happy-trails.png) 
 
 ### Objective 2: Directory Browsing
 
@@ -453,19 +457,19 @@ After answering all these, the secret phrase was revealed:
 
 I browsed to the CFP site to take a look:
 
-<img src="/images/sans_2018/cfp-apply.png"/>
+![CFP Apply](/images/sans_2018/cfp-apply.png) 
 
 When I clicked APPLY NOW! link, it brought me to this URL: 
 
-<img src="/images/sans_2018/cfp-url.png"/>
+![CFP URL](/images/sans_2018/cfp-url.png) 
 
 I noted the *cfp* directory and removed *cfp.html* from the URL:
 
-<img src="/images/sans_2018/cfp-dir-listing.png"/>
+![CFP Dir Listing](/images/sans_2018/cfp-dir-listing.png)
 
 Nice, a directory listing! The listing contained a document called *rejected-talks.csv*. I clicked the link and searched the document for the title of the rejected talk:
 
-<img src="/images/sans_2018/cfp-answer.png"/>
+![CFP Answer](/images/sans_2018/cfp-answer.png)
 
 The rejected talk was submitted by **John McClane**.
 
@@ -477,7 +481,9 @@ The rejected talk was submitted by **John McClane**.
 The door passcode panel indicated that the code was a four-shape combination. I will be totally honest here - I was preparing to write a script when I noticed that you can submit unlimited sequences without getting kicked from the terminal window. I simply "button-mashed" a few times and got lucky.
 
 <p align="center">
-<img src="/images/sans_2018/de-bruijn.png"/>
+
+![de-bruijn](/images/sans_2018/de-bruijn.png)
+
 </p>
 
 After gaining access to the room and clicking on him, Morcel Nougat proclaims **“Welcome unprepared speaker!”**
@@ -535,11 +541,12 @@ I was very excited for this challenge, I'm a big fan of BloodHound. I was hoping
 
 After loading the BloodHound interface and navigating to the *Queries* section, there is a pre-built query that does exactly what we are looking for. A small tip here - since *CanRDP* is not a reliable path, I disabled it in the Edge Filtering menu (located under *Special*):
 
-<img src="/images/sans_2018/bh-edge-filtering.png"/>
+![BH Edge Filtering](/images/sans_2018/bh-edge-filtering.png)
 
 Running this pre-built query with the *CanRDP* filter unchecked resulted in only one path:
 
-<img src="/images/sans_2018/bh-final-path.png"/>
+
+![BH Final Path](/images/sans_2018/bh-final-path.png)
 
 Therefore, the only Kerberoastable user with a reliable path to DA is **LDUBEJ00320@AD.KRINGLECASTLE.COM**.
 
@@ -549,7 +556,9 @@ Therefore, the only Kerberoastable user with a reliable path to DA is **LDUBEJ00
 **Bypass the authentication mechanism associated with the room near Pepper Minstix. A [sample employee badge is available](https://www.holidayhackchallenge.com/2018/challenges/alabaster_badge.jpg). What is the access control number revealed by the door authentication panel?**
 
 <p align="center"> 
-<img src="/images/sans_2018/alabaster_badge.jpg"/>
+
+![Alabaster Badge](/images/sans_2018/alabaster_badge.jpg)
+
 </p>
 
 I performed some quick analysis of the sample badge:
@@ -612,7 +621,7 @@ The answer to this objective is **Fancy Beaver**.
 
 This one really stumped me for awhile! When I first took a look at the Packalyzer app, I ran a capture, downloaded it, and investigated using Wireshark. Unfortunately, the traffic is encrypted, but that jogged my memory about something I had seen. After solving the Python Cranberry Pi, SugarPlum Mary shares a rumor that Packalyzer was rushed into production with development code sitting in the web root. I investigated and found a reference to *app.js* in a comment in the pages source. I loaded app.js:
 
-<img src="/images/sans_2018/app-js.png"/>
+![App JS](/images/sans_2018/app-js.png)
 
 The screenshot above shows:
 
@@ -622,23 +631,23 @@ The screenshot above shows:
 
 I knew that I needed to leak the environment variables, but how? Further down in the code:
 
-<img src="/images/sans_2018/app-js-2.png"/>
+![App JS 2](/images/sans_2018/app-js-2.png)
 
 This showed that the application builds the directory structure using the environment variables. Now, this is where I really tripped myself up... I loaded /DEV/ saw this output:
 
-<img src="/images/sans_2018/dev-packalyzer-env.png"/>
+![Dev Packalyzer env](/images/sans_2018/dev-packalyzer-env.png)
 
 I thought to myself, "Well, that didn't work..." and went on testing and researching anything that could leak the environment variables. If I had run the second test, shown below, I would have realized that /DEV/ worked and I was just moving too quickly:
 
-<img src="/images/sans_2018/ssl-packalyzer-env.png"/>
+![SSL Packalyzer env](/images/sans_2018/ssl-packalyzer-env.png)
 
 As shown in the two screenshots, I was able to obtain the environment variables values from the error messages. Then I loaded the final URL to grab the client random SSL log:
 
-<img src="/images/sans_2018/client-random-ssl.png"/>
+![Client Random SSL](/images/sans_2018/client-random-ssl.png)
 
 I saved that to a file and loaded it into Wireshark (Preferences > Protocols > SSL):
 
-<img src="/images/sans_2018/wireshark-preferences.png"/>
+![Wireshark Preferences](/images/sans_2018/wireshark-preferences.png)
 
 Parsing the decrypted pcap, I expected to see a document sent but I was only able to collect three sets of credentials:
 
@@ -650,14 +659,11 @@ pepper:Shiz-Bamer_wabl182
 
 Looking closer, these are the three users credentials for packalyzer. I logged in with all three to search around and Alabaster had a capture saved named "super_secret_packet_capture.pcap". It is a capture containing only one stream, a single SMTP connection:
 
-<img src="/images/sans_2018/smtp-stream.png"/>
-
+![SMTP Stream](/images/sans_2018/smtp-stream.png)
 
 The email contained an attachment. I grabbed the base64 encoded text, decoded it and opened the file. It is a PDF describing how to transpose piano keys.
 
-
-<img src="/images/sans_2018/snowball-pdf.png"/>
-
+![Snowball PDF](/images/sans_2018/snowball-pdf.png)
 
 I completed the objective by submitting the song - **Mary Had a Little Lamb**.
 
@@ -670,11 +676,11 @@ I completed the objective by submitting the song - **Mary Had a Little Lamb**.
 
 I loaded up the Snort terminal:
 
-<img src="/images/sans_2018/snort-terminal.png"/>
+![Snort Terminal](/images/sans_2018/snort-terminal.png)
 
 The <code>more_info.txt</code> file provides us with an web interface, https://snortsensor1.kringlecastle.com/, that stores the last five minutes worth of pcaps. I grabbed a few of the pcaps and started looking at the malicious traffic:
 
-<img src="/images/sans_2018/dns-traffic.png"/> 
+![DNS Traffic](/images/sans_2018/dns-traffic.png)
 
 Interesting. I saw a lot of DNS traffic to various domains, with a very unique hex string. I wanted to understand that string before keying on it:
 
@@ -714,7 +720,7 @@ $ sed '/^$/d' fused.txt | sed -n 'g;n;p' > fuse2.txt
 
 I put the content from <code>fuse2.txt</code> into [CyberChef](https://gchq.github.io/CyberChef/) to decode the Hex:
 
-<img src="/images/sans_2018/wannacookie-decode.png"/>
+![WannaCookie Decode](/images/sans_2018/wannacookie-decode.png)
 
 Finally, I opened the file in a text editor and replaced all the semi-colons with newlines to clean up the formatting. There were multiple references to <code>erohetfanu.com</code> throughout the malicious powershell script. I submitted **erohetfanu.com** to complete this objective.
 
@@ -735,11 +741,11 @@ $(H2A $(B2H $(ti_rox $(B2H $(G2B $(H2B $S1))) $(Resolve-DnsName -Server erohetfa
 
 The screenshot below shows the output:
 
-<img src="/images/sans_2018/killswitch-print.png"/>
+![Killswitch Print](/images/sans_2018/killswitch-print.png)
 
 I went over to the HoHoHoDaddy terminal and registered the <code>yippeekiyaa.aaay</code> domain:
 
-<img src="/images/sans_2018/killswitch-register.png"/>
+![Killswitch Register](/images/sans_2018/killswitch-register.png)
 
 Registering the domain completes this objective.
 
@@ -917,7 +923,8 @@ Interesting. I dug up the PDF that Holly Evergreen had sent Alabaster during the
 
 The final password translated to - **DC#DC#DDC#DEF#EF#GAG#AG#A**. Using this, we play the piano lock and open the final door to reveal...
 
-<img src="/images/sans_2018/final-plan.png"/>
+![Final Plan](/images/sans_2018/final-plan.png)
+
 
 **Santa** was behind the whole KringleCon plan. Han and the Toy Soldiers (undercover Elves) work for him. The entire scenario was a test to find security professionals with skills across the various infosec domains to help defend the operation next year from any nefarious actors!
 
